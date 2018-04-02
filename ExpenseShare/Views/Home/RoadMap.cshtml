@@ -1,0 +1,27 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Road Map";
+}
+
+<div class="well">
+    <h2>@ViewBag.Title</h2>
+    <h4 class="text-muted"><em>@ViewBag.Message</em></h4>
+</div>
+
+<h3>Short-Term Goals:</h3>
+<ul id="shortTerm">
+    <li><h4>Add an API to get active exchange rate updates</h4></li>
+    <li><h4>Add a populated Currency Menu using the API mentioned above</h4></li>
+    <li><h4>Add ability to change the currency globally</h4></li>
+    <li><h4>Add API for geo-location</h4></li>
+    <li><h4>Add feature using above API that only displays the option to calculate a tip in regions where it is customary</h4></li>
+</ul>
+
+<h3>Long-Term Goals:</h3>
+<ul id="longTerm">
+    <li><h4>Add ability to create new users, login / authentication features and security</h4></li>
+    <li><h4>Add ability to easily read in bill information and create a bill - Possibly using an API to take a photo of the bill</h4></li>
+    <li><h4>Add ability to have users 'check-in' on the bill</h4></li>
+    <li><h4>Add ability for users to check off what items were theirs, and derive their total</h4></li>
+    <li><h4>Add API that will connect to each user's e-wallet and automatically draw their total off and send it to the bill creator</h4></li>
+</ul>

@@ -1,0 +1,55 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Xpense$hare";
+}
+
+<div class="jumbotron">
+
+    <h1>@ViewBag.Title</h1>
+    <p class="lead">
+        Xpense$hare is a streamlined WebApp for friends to easily split expenses, calculate tips and convert currencies.
+    </p>
+
+    <h3 class="text-muted">ALPHA 0.3</h3>
+    <p>
+        @Html.Bootstrap().ActionButton("Learn More \u00BB", BootstrapNamedColor.Primary, "About", "Home")
+    </p>
+</div>
+
+<div class="row" id="mainRow">
+
+    <div class="col-md-4 col-md-offset-1">
+
+        <h2>Split an Expense</h2>
+        <p>
+            Split a bill, or any expense, between any number of people.
+        </p>
+        <p>
+            @Html.Bootstrap().ActionButton("Share Expenses \u00BB", BootstrapNamedColor.Success, "BillCalculator", "Calculator")
+        </p>
+    </div>
+
+    <div class="col-md-3">
+
+        <h2>Calculate a Tip</h2>
+        <p>
+            Calculate a tip and, if you want, split it between any number of people
+        </p>
+        <p>
+            @Html.Bootstrap().ActionButton("Calculate a Tip \u00BB", BootstrapNamedColor.Success, "TipCalculator", "Calculator")
+        </p>
+    </div>
+
+    <div class="col-md-3">
+
+        <h2>Convert Currency</h2>
+        <h4 class="text-muted text-info"><i class="fa fa-exclamation-triangle" style="color: red;"></i>&nbsp;<em>Under Construction</em>&nbsp;<i class="fa fa-exclamation-triangle" style="color: red;"></i></h4>
+        <p>
+            &nbsp;
+        </p>
+        <p>
+            @Html.Bootstrap().ActionButton("Convert Currency \u00BB", BootstrapNamedColor.Success, "ConvertCurrency", "Currency")
+        </p>
+    </div>
+
+</div>

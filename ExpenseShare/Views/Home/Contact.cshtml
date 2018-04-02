@@ -1,0 +1,32 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Contact Me";
+}
+<div class="well">
+    <h2>@ViewBag.Title.</h2>
+    <h4 class="text-muted"><em>@ViewBag.Message</em></h4>
+</div>
+
+<h4>James Vanetta</h4>
+<address>
+    776 County Road 30-A<br />
+    Ashland, OH 44805<br />
+    Phone: 419.631.6637
+</address>
+<hr />
+<div id="contactForm">
+    <form method="POST" action='https://formspree.io/jimmy.vanetta@gmail.com'>
+        <div>Subject</div>
+        <input type="text" class="form-control" name="subject">
+        <div>Name</div>
+        <input type="text" class="form-control" name="name">
+        <div>E-Mail</div>
+        <input type="email" class="form-control" name="_replyto">
+        <div>Message</div>
+        <textarea type="text" class="form-control" name="body" rows="10" cols="30" placeholder="Enter a message..."></textarea>
+        <br />
+        <br />
+        <input type="submit" class="form-control" value="Submit" name="send">
+        <input type="hidden" class="form-control" name="_next" value="//jimmydotnet.github.io">
+    </form>
+</div>

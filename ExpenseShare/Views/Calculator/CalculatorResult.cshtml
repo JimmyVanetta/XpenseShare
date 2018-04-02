@@ -1,0 +1,50 @@
+﻿@model ExpenseShare.Models.Expense
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Results";
+    int numberSharingBill = Model.NumberSharingBill;
+    decimal bill = Model.BillResult;
+    decimal tip = Model.TipResult;
+    decimal billPlusTip = (bill + tip);
+}
+
+<div class="well">
+    <h2>@ViewBag.Title</h2>
+    <h4 class="text-muted"><em>@ViewBag.Message</em></h4>
+</div>
+
+<hr />
+
+@* If the user selects 0 || 1 as number sharing the bill display the information in singular terms *@
+@if (numberSharingBill.Equals(0) || numberSharingBill.Equals(1))
+{
+    <h4>You Owe $@(bill)</h4>
+    if (tip == 0.00m)
+    {
+        @* If user selects 0 for the tip percentage display nothing *@
+
+    }
+    else
+    {
+        <h4>You Should Tip $@(tip)</h4>
+    }
+}
+@* Else display bill information in plural terms *@
+else
+{
+    <h4>Each Party Owes $@(bill)</h4>
+    if (tip == 0.00m)
+    {
+        @* If user selects 0 for the tip percentage display nothing *@
+    }
+    else
+    {
+        <h4>Your Party Should Tip $@(tip)</h4>
+        <h5>Each Party Should Leave $@((tip) / (numberSharingBill))</h5>
+        <p>Total With Tip: $@(billPlusTip)</p>
+    }
+}
+
+
+
