@@ -9,10 +9,10 @@ namespace ExpenseShare.Models
     {
         public decimal AmountToConvert { get; set; }
 
+        public string CurrencyCode { get; set; }
+
         public decimal ExchangeRate { get; set; }
 
-        // TODO: 
-        // Add a collection of exchange rates, populate the collection with json through fixer.io API
-        // Add a helper method GetExchangeRate 
+        public IList<string> ExchangeRates { get; set; }
     }
 }
