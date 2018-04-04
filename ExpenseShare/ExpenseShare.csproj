@@ -158,15 +158,14 @@
     <Compile Include="Controllers\CalculatorController.cs" />
     <Compile Include="Controllers\CurrencyController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="DAL\ExchangeRateDAL.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\BillInfo.cs" />
     <Compile Include="Models\Calculator.cs" />
-    <Compile Include="Models\Class1.cs" />
     <Compile Include="Models\Currency.cs" />
     <Compile Include="Models\CurrencyInfo.cs" />
+    <Compile Include="Models\CurrencyNameResponse.cs" />
     <Compile Include="Models\ExchangeRateResponse.cs" />
     <Compile Include="Models\Expense.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -226,6 +225,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="DAL\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

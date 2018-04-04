@@ -10,5 +10,7 @@ namespace ExpenseShare.Models
         public decimal AmountConvertedFrom { get; set; }
 
         public decimal ConvertedAmount { get; set; }
+
+        public string CurrencyName { get; set; }
     }
 }
