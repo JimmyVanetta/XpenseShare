@@ -38,6 +38,9 @@ namespace ExpenseShare.Controllers
             // Instance of Expense to be passed through as the model
             Expense bill = new Expense
             {
+                // Set the Bill Total to be displayed
+                BillTotal = billInfo.BillAmount,
+
                 // Set the Bill Result to be displayed 
                 BillResult = calc.DivideBill(billInfo.BillAmount, billInfo.NumberOfBillShares),
 
@@ -46,10 +49,20 @@ namespace ExpenseShare.Controllers
 
                 // Set the amount of people sharing the bill 
                 NumberSharingBill = billInfo.NumberOfBillShares,
-
-                // Set the amount of people sharing the tip
-                NumberSharingTip = billInfo.NumberOfTipShares
             };
+
+            if (bill.NumberSharingBill == 0)
+            {
+                bill.SharedTip = bill.TipResult;
+            }
+            else
+            {
+                bill.SharedTip = Math.Round((bill.TipResult / bill.NumberSharingBill), 2);
+            }
+            
+            bill.BillPlusTip = Math.Round((bill.BillTotal + bill.TipResult), 2);
+
+            bill.IndividualBillPlusIndividualTip = Math.Round((bill.BillResult + bill.SharedTip), 2);
 
             ViewBag.Message = "Here Are Your Results";
 

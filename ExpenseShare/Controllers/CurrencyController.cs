@@ -31,7 +31,6 @@ namespace ExpenseShare.Controllers
         [HttpPost]
         public async Task<ActionResult> ConvertCurrencyResult(CurrencyInfo currencyInfo)
         {
-            
             Calculator calc = new Calculator();
 
             var exchangeRateResponse = await GetCurrentExchangeRates();
@@ -45,7 +44,11 @@ namespace ExpenseShare.Controllers
 
                 ConvertedAmount = calc.ConvertCurrency(currencyInfo.AmountToConvert, currencyInfo.ExchangeRate),
 
-                CurrencyName = GetCurrencyNamesFromCurrencyCode(currencyInfo.CurrencyCode, currencyNameResponse.Currencies)
+                CurrencyName = GetCurrencyNamesFromCurrencyCode(currencyInfo.CurrencyCode.Remove(0, 3), currencyNameResponse.Currencies),
+
+                CurrencyCode = currencyInfo.CurrencyCode.Remove(0, 3),
+
+                ExchangeRate = currencyInfo.ExchangeRate
             };
 
             ViewBag.Message = "Here Are Your Results";
@@ -83,7 +86,7 @@ namespace ExpenseShare.Controllers
 
             if (property != null)
             {
-                name = (string)property.GetValue(currencyCode);
+                name = (string)property.GetValue(currencies);
             }
 
             return name;

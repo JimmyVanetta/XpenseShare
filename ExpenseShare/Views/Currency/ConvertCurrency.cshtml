@@ -10,8 +10,6 @@
     <h4 class="text-muted"><em>@ViewBag.Message</em></h4>
 </div>
 
-<h4 class="text-muted"><i class="fa fa-exclamation-triangle" style="color: red;"></i>&nbsp;<em>Under Construction</em>&nbsp;<i class="fa fa-exclamation-triangle" style="color: red;"></i></h4>
-
 <form action="@Url.Action("ConvertCurrencyResult", "Currency", Model)" method="post">
     <h4>Amount to Convert:</h4>
     <span><i class="glyphicon glyphicon-usd"></i>&nbsp;</span>@Html.TextBoxFor(m => m.AmountToConvert, new { @class = "test" })

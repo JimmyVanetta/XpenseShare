@@ -4,9 +4,12 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.Title = "Results";
     int numberSharingBill = Model.NumberSharingBill;
+    decimal billTotal = Model.BillTotal;
     decimal bill = Model.BillResult;
+    decimal billPlusTip = Model.BillPlusTip;
     decimal tip = Model.TipResult;
-    decimal billPlusTip = (bill + tip);
+    decimal shareTipResult = Model.SharedTip;
+    decimal individualTotalPlusTip = Model.IndividualBillPlusIndividualTip;
 }
 
 <div class="well">
@@ -23,16 +26,17 @@
     if (tip == 0.00m)
     {
         @* If user selects 0 for the tip percentage display nothing *@
-
     }
     else
     {
-        <h4>You Should Tip $@(tip)</h4>
+        <h5>You Should Tip $@(tip)</h5>
+        <p>Total Plus Tip: $@(billPlusTip)</p>
     }
 }
 @* Else display bill information in plural terms *@
 else
 {
+    <h3>Total: $@Model.BillTotal</h3>
     <h4>Each Party Owes $@(bill)</h4>
     if (tip == 0.00m)
     {
@@ -40,9 +44,19 @@ else
     }
     else
     {
-        <h4>Your Party Should Tip $@(tip)</h4>
-        <h5>Each Party Should Leave $@((tip) / (numberSharingBill))</h5>
+        <h5>Your Party Should Tip $@(tip)</h5>
+        <h5>Each Party Should Leave $@(shareTipResult)</h5>
         <p>Total With Tip: $@(billPlusTip)</p>
+
+        if (numberSharingBill == 0)
+        {
+            @*<p>Total With Tip: $@(billPlusTip)</p>*@
+        }
+        if (numberSharingBill >= 0)
+        {
+            <p>Individual Total With Tip: $@(individualTotalPlusTip)</p>
+        }
+
     }
 }
 

@@ -2,11 +2,23 @@
 
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
-    ViewBag.Title = "Convert Currency";
+    ViewBag.Title = "Results";
 }
 
-<span>@Model.AmountConvertedFrom</span><span> - US Dollars - USD</span>
+<div class="well">
+    <h2>@ViewBag.Title</h2>
+    <h4 class="text-muted"><em>@ViewBag.Message</em></h4>
+</div>
+
+<hr />
+
+<h4>Exchange Rate:</h4>
+<h5>$1 USD&nbsp;<i class="glyphicon glyphicon-arrow-right"></i>&nbsp;$@(Model.ExchangeRate) - @(Model.CurrencyCode)</h5>
+
+<hr />
+
+<span><i class="glyphicon glyphicon-usd"></i>&nbsp;</span><span>@(Model.AmountConvertedFrom)</span><span> - US Dollars - USD</span>
 <br>
 <span><i class="glyphicon glyphicon-arrow-down text-center"></i>&nbsp;&nbsp;&nbsp;&nbsp;<i class="glyphicon glyphicon-arrow-down text-center"></i></span>
 <br>
-<span>@Model.ConvertedAmount</span><span> - Canadian Dollars - CAD</span>
+<span>@(Model.ConvertedAmount)</span><span> - @(Model.CurrencyName) - @(Model.CurrencyCode)</span>
