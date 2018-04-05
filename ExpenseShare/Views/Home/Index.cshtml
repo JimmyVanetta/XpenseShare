@@ -24,29 +24,18 @@
 
         <h2>Share an Expense</h2>
         <p>
-            Split a bill, or any expense, between any number of people.
+            Split a bill, or any expense, between any number of people. Also calculate a tip.
         </p>
         <p>
             @Html.Bootstrap().ActionButton("Share Expenses \u00BB", BootstrapNamedColor.Success, "BillCalculator", "Calculator")
         </p>
     </div>
 
-    @*<div class="col-md-3">
-
-               <h2>Calculate a Tip</h2>
-                <p>
-                    Calculate a tip and, if you want, split it between any number of people
-                </p>
-                <p>
-                    @Html.Bootstrap().ActionButton("Calculate a Tip \u00BB", BootstrapNamedColor.Success, "TipCalculator", "Calculator")
-                </p>
-        </div>*@
-
     <div class="col-md-3 text-center">
 
         <h2>Convert Currencies</h2>
         <p>
-            Convert $USD in to one of 168 available world currencies.
+            Convert $USD in to one of 168 available world currencies. Even Bitcoin!
         </p>
         <p>
             @Html.Bootstrap().ActionButton("Convert Currency \u00BB", BootstrapNamedColor.Success, "ConvertCurrency", "Currency")
