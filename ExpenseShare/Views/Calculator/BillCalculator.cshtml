@@ -1,8 +1,11 @@
 ﻿@model ExpenseShare.Models.BillInfo
+@using System.Web.UI;
 
+@*@Control myControl = new Control();*@
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.Title = "Bill Calculator";
+    
 }
 
 <div class="well">
@@ -12,12 +15,15 @@
 
 <hr />
 
-<form action="@Url.Action("CalculatorResult", "Calculator", Model)" method="post">
+<form id="billCalcForm" action="@Url.Action("CalculatorResult", "Calculator", Model)" method="post">
     <h4>Bill Total:</h4>
-    <span><i class="glyphicon glyphicon-usd"></i>&nbsp;</span>@Html.TextBoxFor(m => m.BillAmount, new { @class = "test" })
+    <span><i class="glyphicon glyphicon-usd"></i>&nbsp;</span>@Html.TextBoxFor(m => m.BillAmount, new { @class = "textInput", type = "number", step = "0.01", min = "0.00", required = "required" })
     <h4>How Many Are Sharing:</h4>
-    <span><i class="glyphicon glyphicon-user"></i>&nbsp;</span>@Html.TextBoxFor(m => m.NumberOfBillShares, new { @class = "test" })
-    <h4>Select Tip Percentage:</h4>
-    <span><i class="fa fa-percent"></i>&nbsp;</span>@Html.DropDownListFor(m => m.TipPercent, new SelectList(Model.TipPercentages, "Value", "Key"))
+    <span><i class="glyphicon glyphicon-user"></i>&nbsp;</span>@Html.TextBoxFor(m => m.NumberOfBillShares, new { @class = "textInput", type = "number", required = "required", oninvalid = "this.setCustomValidity('Required Field')", oninput = "this.SetCustomValidity('') " })
+    <button class="btn btn-default tipBtn" style="display:block; margin-top: 10px;" type="button" onclick="toggleTipSelect()">Add A Tip</button>
+    <div id="tipSelect"+*>
+        <h4>Select Tip Percentage:</h4>
+        <span><i class="fa fa-percent"></i>&nbsp;</span>@Html.DropDownListFor(m => m.TipPercent, new SelectList(Model.TipPercentages, "Value", "Key"), new {  })
+    </div>
     <button style="display: block; margin-top: 10px;" class="btn btn-success">Calculate &raquo;</button>
 </form>

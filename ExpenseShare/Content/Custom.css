@@ -37,6 +37,10 @@ textarea {
     margin: auto;
 }
 
-.test {
+#billCalcForm {
+    
+}
+
+#billCalcForm:focus {
 
 }
