@@ -1,15 +1,7 @@
-﻿// Make query selectors for textbox
+﻿
 $(document).ready(function () {
 
-    $("#tipSelect").hide();
-    let str = $("option:first");
-    if ($("#tipSelect").is(":visible")) {
-        str.html("No Tip");
-    }
 });
-
-
-
 
 
 function toggleTipSelect() {
@@ -22,6 +14,9 @@ function toggleTipSelect() {
         $(tipBtn).text("Add A Tip")
     }
 }
+
+// Make query selectors for textbox
+
 // Make entire text box clear on click
 $("#billCalcForm .textInput").focus(function () {
     $(this).val("");
