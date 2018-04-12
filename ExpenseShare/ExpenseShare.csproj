@@ -219,7 +219,6 @@
     <Content Include="Views\Calculator\BillCalculator.cshtml" />
     <Content Include="Views\Home\RoadMap.cshtml" />
     <Content Include="Views\Calculator\CalculatorResult.cshtml" />
-    <Content Include="Views\Calculator\TipCalculator.cshtml" />
     <Content Include="Views\Currency\ConvertCurrency.cshtml" />
     <Content Include="Views\Currency\ConvertCurrencyResult.cshtml" />
   </ItemGroup>

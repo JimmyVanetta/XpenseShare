@@ -12,13 +12,12 @@ namespace ExpenseShare.Models
 
         public decimal TipPercent { get; set; }
 
-        public int NumberOfBillShares { get; set; }
+        public int NumberOfBillShares { get; set; } = 1;
 
         public int NumberOfTipShares { get; set; }
 
         public readonly IDictionary<int, decimal> TipPercentages = new Dictionary<int, decimal>
         {
-            {0, 0.00m},
             {5, 0.05m},
             {10, 0.10m},
             {15, 0.15m},

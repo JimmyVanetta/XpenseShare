@@ -12,7 +12,7 @@
 
 <form id="currencyForm" action="@Url.Action("ConvertCurrencyResult", "Currency", Model)" method="post">
     <h4>Amount to Convert <em>(USD is currently the only base currency)</em>:</h4>
-    <span><i class="glyphicon glyphicon-usd"></i>&nbsp;</span>@Html.TextBoxFor(m => m.AmountToConvert, new { @class = "textInput", type = "number", step = "0.01", min = "0.00", autocomplete = "off", @required = "required" })
+    <span><i class="glyphicon glyphicon-usd"></i>&nbsp;</span>@Html.TextBoxFor(m => m.AmountToConvert, new { @class = "textInput", type = "number", step = "0.01", min = "0.00", autocomplete = "off", required = "required" })
     <h4>Convert To:</h4>
     <span><i class="glyphicon glyphicon-globe"></i>&nbsp;</span><select required id="currencyCodeSelect" name="CurrencyCode">
 

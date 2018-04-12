@@ -19,16 +19,6 @@ namespace ExpenseShare.Controllers
             return View("BillCalculator", billInfo);
         }
 
-        // Tip Calculator View
-        public ActionResult TipCalculator()
-        {
-            BillInfo billInfo = new BillInfo();
-
-            ViewBag.Message = "Let's Get to Work!";
-
-            return View("TipCalculator", billInfo);
-        }
-
         // Results View
         public ActionResult CalculatorResult(BillInfo billInfo /* Passing along the model built in Bill Calculator or Tip Calculator */)
         {
@@ -49,6 +39,10 @@ namespace ExpenseShare.Controllers
 
                 // Set the amount of people sharing the bill 
                 NumberSharingBill = billInfo.NumberOfBillShares,
+
+                NumberSharingTip = billInfo.NumberOfTipShares,
+
+
             };
 
             if (bill.NumberSharingBill == 0)
